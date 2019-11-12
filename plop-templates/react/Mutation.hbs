@@ -1,0 +1,19 @@
+import React from 'react';
+import gql from 'graphql-tag';
+import { useMutation } from '@apollo/react-hooks';
+
+const {{constantCase gql_type}} = gql`
+    {{gql}}
+`;
+
+function {{properCase gql_type}}() {
+    const [{{camelCase gql_type}}, { data }] = useMutation({{constantCase gql_type}});
+
+    return (
+        <div>
+            <h1>{{constantCase gql_type}}</h1>
+        </div>
+    )
+}
+
+export default {{properCase gql_type}};

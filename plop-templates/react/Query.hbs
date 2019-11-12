@@ -1,0 +1,33 @@
+import React from 'react';
+import gql from 'graphql-tag';
+import { useQuery } from '@apollo/react-hooks';
+
+const {{constantCase gql_type}} = gql`
+    {{gql}}
+`;
+
+function {{properCase gql_type}}() {
+    const { loading, error, data } = useQuery({{constantCase gql_type}});
+
+    if (loading) {
+        return (
+            <div>Loading...</div>
+        )
+    }
+
+    if (error) {
+        return (
+            <div>
+                { `Error! ${error.message}` }
+            </div>
+        )
+    }
+
+    return (
+        <div>
+            <h1>{{{constantCase gql_type}}}</h1>
+        </div>
+    )
+}
+
+export default {{properCase gql_type}};

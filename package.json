@@ -1,0 +1,21 @@
+{
+  "name": "graphql-client-codegen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "plop"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "plop": "^2.5.3"
+  },
+  "dependencies": {
+    "graphql": "^14.5.8",
+    "node-fetch": "^2.6.0",
+    "node-plop": "^0.23.0"
+  }
+}
