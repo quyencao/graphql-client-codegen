@@ -178,8 +178,8 @@ module.exports = function(plop) {
     ]
   });
 
-  plop.setGenerator('react:all', {
-    description: 'Generate React Component',
+  plop.setGenerator('react:app', {
+    description: 'Generate React Graphql App',
     prompts: [{
         type: 'input',
         name: 'endpoint',
@@ -253,5 +253,38 @@ module.exports = function(plop) {
     ]
   });
 
-  
+  plop.setGenerator('vue:app', {
+    description: 'Generate Vue Graphql App',
+    prompts: [{
+        type: 'input',
+        name: 'endpoint',
+        message: 'Enter graphql endpoint'
+    }],
+    actions: [
+        {
+            type: 'add',
+            path: 'graphql/connect/vue-apollo.js',
+            templateFile: 'plop-templates/vue/Connect.hbs',
+            force: true
+        },
+        {
+            type: 'generateGql',
+            path: 'graphql/gqls/{{properCase gql_type}}.gql',
+            templateFile: 'plop-templates/vue/Gql.hbs',
+            force: true
+        },
+        {
+            type: 'generateQuery',
+            path: 'graphql/queries/{{properCase gql_type}}.vue',
+            templateFile: 'plop-templates/vue/Query.hbs',
+            force: true
+        },
+        {
+            type: 'generateMutation',
+            path: 'graphql/mutations/{{properCase gql_type}}.vue',
+            templateFile: 'plop-templates/vue/Mutation.hbs',
+            force: true
+        },
+    ]
+  });
 };
